@@ -1,0 +1,37 @@
+{
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.typo3.org/"
+        }
+    ],
+    "name": "tollwerk/nueww",
+    "description": "NUEWW 2018",
+    "license": "GPL-2.0+",
+    "require": {
+        "typo3/cms": "8.7.7",
+        "fluidtypo3/flux": "^8.2",
+        "fluidtypo3/fluidcontent": "^5.2",
+        "fluidtypo3/fluidpages": "^4.1",
+        "fluidtypo3/vhs": "^4.3",
+        "tollwerk/tw-googleanalytics": "^3.0",
+        "tollwerk/tw-componentlibrary": "^0.2.4"
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": "web"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {},
+        "classmap": []
+    },
+    "autoload": {
+        "psr-4": {
+            "Tollwerk\\TwNueww\\": "web/typo3conf/ext/tw_nueww/Classes/",
+            "Tollwerk\\TwNueww\\Component\\": "web/typo3conf/ext/tw_nueww/Components/",
+            "Tollwerk\\TwComponentlibrary\\": "web/typo3conf/ext/tw_componentlibrary/Classes/"
+        }
+    }
+}
