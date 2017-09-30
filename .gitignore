@@ -22,6 +22,8 @@
 !/web/fileadmin
 !/web/fileadmin/nueww/
 !/web/fileadmin/nueww/**
+/web/fileadmin/nueww/js
+/web/fileadmin/nueww/css
 
 !/web/typo3conf/CoolUriConf.xml
 !/web/typo3conf/LocalConfiguration.php

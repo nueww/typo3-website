@@ -29,6 +29,7 @@ return [
             'tw_componentlibrary' => 'a:2:{s:16:"componentlibrary";s:7:"fractal";s:6:"script";s:66:"/www/accounts/nueww/data/web/fileadmin/nueww/bin/fractal-update.sh";}',
             'tw_googleanalytics' => 'a:0:{}',
             'tw_nueww' => 'a:0:{}',
+            'typo3_console' => 'a:0:{}',
             'vhs' => 'a:1:{s:20:"disableAssetHandling";s:1:"0";}',
         ],
     ],

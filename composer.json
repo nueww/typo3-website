@@ -15,7 +15,8 @@
         "fluidtypo3/fluidpages": "^4.1",
         "fluidtypo3/vhs": "^4.3",
         "tollwerk/tw-googleanalytics": "^3.0",
-        "tollwerk/tw-componentlibrary": "^0.2.4"
+        "tollwerk/tw-componentlibrary": "^0.2.4",
+        "helhum/typo3-console": "^4.9"
     },
     "extra": {
         "typo3/cms": {

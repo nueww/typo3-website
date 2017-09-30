@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "47bb819824c9a8ebb5fe93baacd97bf9",
+    "content-hash": "df6f780ae0b9b27ce47d46f37d139237",
     "packages": [
         {
             "name": "cogpowered/finediff",
@@ -966,6 +966,146 @@
             "time": "2017-03-20T17:10:46+00:00"
         },
         {
+            "name": "helhum/typo3-console",
+            "version": "4.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-Console/TYPO3-Console.git",
+                "reference": "b24bdfbd5d2d1dbc84f24d87cbaabc56aaeeba8b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-Console/TYPO3-Console/zipball/b24bdfbd5d2d1dbc84f24d87cbaabc56aaeeba8b",
+                "reference": "b24bdfbd5d2d1dbc84f24d87cbaabc56aaeeba8b",
+                "shasum": ""
+            },
+            "require": {
+                "ext-phar": "*",
+                "helhum/typo3-console-plugin": "^1.7.5 || ^2.0.2",
+                "php": ">=5.5.0 <7.2",
+                "symfony/console": "^2.7 || ^3.0",
+                "symfony/process": "^2.7 || ^3.0",
+                "typo3/cms-backend": "^7.6 || ^8.7",
+                "typo3/cms-core": "^7.6 || ^8.7",
+                "typo3/cms-extbase": "^7.6 || ^8.7",
+                "typo3/cms-extensionmanager": "^7.6 || ^8.7",
+                "typo3/cms-fluid": "^7.6 || ^8.7",
+                "typo3/cms-install": "^7.6 || ^8.7",
+                "typo3/cms-saltedpasswords": "^7.6 || ^8.7",
+                "typo3/cms-scheduler": "^7.6 || ^8.7"
+            },
+            "replace": {
+                "typo3-ter/typo3-console": "self.version",
+                "typo3_console": "self.version"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "~1.6.0",
+                "nimut/testing-framework": "^1.0",
+                "symfony/filesystem": "^3.2",
+                "typo3-console/create-reference-command": "^1.0",
+                "typo3/cms": "^8.7"
+            },
+            "bin": [
+                "Scripts/typo3cms"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.x-dev"
+                },
+                "typo3/cms": {
+                    "cms-package-dir": "{$vendor-dir}/typo3/cms",
+                    "web-dir": ".Build/Web",
+                    "Package": {
+                        "partOfMinimalUsableSystem": true
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Helhum\\Typo3Console\\": [
+                        "Classes/",
+                        "Resources/Private/ExtensionArtifacts/src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Helmut Hummel",
+                    "email": "info@helhum.io",
+                    "homepage": "http://helhum.io",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A reliable and powerful command line interface for TYPO3 CMS",
+            "homepage": "http://insight.helhum.io/post/104528981610/about-the-beauty-and-power-of-typo3-console",
+            "keywords": [
+                "cli",
+                "command",
+                "commandline",
+                "console",
+                "typo3"
+            ],
+            "time": "2017-09-20T18:41:57+00:00"
+        },
+        {
+            "name": "helhum/typo3-console-plugin",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TYPO3-Console/typo3-console-plugin.git",
+                "reference": "4886cd23d0e37a20c2fd5b6d2408dcfe7c6fca48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TYPO3-Console/typo3-console-plugin/zipball/4886cd23d0e37a20c2fd5b6d2408dcfe7c6fca48",
+                "reference": "4886cd23d0e37a20c2fd5b6d2408dcfe7c6fca48",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "php": ">=7.0.0 <7.2",
+                "typo3/cms-composer-installers": "^1.4"
+            },
+            "require-dev": {
+                "composer/composer": "^1.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Helhum\\Typo3ConsolePlugin\\Plugin",
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Helhum\\Typo3ConsolePlugin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Helmut Hummel",
+                    "email": "info@helhum.io"
+                }
+            ],
+            "description": "Installer plugin for helhum/typo3-console, to ease usage without the need to specify scripts in your root composer.json",
+            "homepage": "https://github.com/helhum/typo3-console-plugin",
+            "keywords": [
+                "composer",
+                "plugin",
+                "typo3 console"
+            ],
+            "time": "2017-08-14T13:44:01+00:00"
+        },
+        {
             "name": "mso/idna-convert",
             "version": "v1.1.0",
             "source": {
@@ -1396,6 +1536,55 @@
                 "shim"
             ],
             "time": "2017-06-14T15:44:48+00:00"
+        },
+        {
+            "name": "symfony/process",
+            "version": "v3.3.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "b7666e9b438027a1ea0e1ee813ec5042d5d7f6f0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/b7666e9b438027a1ea0e1ee813ec5042d5d7f6f0",
+                "reference": "b7666e9b438027a1ea0e1ee813ec5042d5d7f6f0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9|>=7.0.8"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "https://symfony.com",
+            "time": "2017-07-29T21:54:42+00:00"
         },
         {
             "name": "symfony/yaml",
