@@ -10,7 +10,7 @@ fractal.docs.set('path', path.join(__dirname, 'fractal', 'docs'));
 fractal.web.set('static.path', path.join(__dirname, 'web'));
 fractal.web.set('builder.dest', path.join(__dirname, 'fractal', 'build'));
 
-typo3.configure('web');
+typo3.configure('web', 'https://nueww.tollwerk.de');
 
 fractal.components.engine(typo3.engine);
 fractal.components.set('ext', '.t3s');

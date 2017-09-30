@@ -131,6 +131,9 @@ return [
         'tw_googleanalytics' => [
             'packagePath' => 'typo3conf/ext/tw_googleanalytics/',
         ],
+        'tw_nueww' => [
+            'packagePath' => 'typo3conf/ext/tw_nueww/',
+        ],
         'vhs' => [
             'packagePath' => 'typo3conf/ext/vhs/',
         ],

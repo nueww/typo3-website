@@ -33,6 +33,7 @@ return [
         ],
     ],
     'FE' => [
+        'cHashExcludedParameters' => 'L, pk_campaign, pk_kwd, utm_source, utm_medium, utm_campaign, utm_term, utm_content,tx_twcomponentlibrary_component[component]',
         'debug' => false,
         'loginSecurityLevel' => 'rsa',
     ],
