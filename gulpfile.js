@@ -72,8 +72,7 @@ const insert = require('gulp-insert');
 const glob = require('glob');
 
 gulp.task('css', () => {
-    const autoIncludes = glob.sync(fspath.resolve(`${providerExt}/Resources/Private/Partials/Global/_Styles/Config/*.css`), { cwd: '/' });
-    const extDirAbs = fspath.resolve(extDist);
+    const autoIncludes = glob.sync(fspath.resolve(`${providerExt}/Resources/Private/Partials/Global/_Styles/**/*.css`), { cwd: '/' });
     gulp.src(['*/Resources/Private/Partials/*/*/*.css', '!*/Resources/Private/Partials/*/_*/*.css'], { cwd: extDist })
     .pipe(sourcemaps.init()) // Initialize sourcemaps
     .pipe(insert.transform(function (contents, file) {
@@ -85,10 +84,10 @@ gulp.task('css', () => {
     .pipe(postcss([
         partialImport(),
         postcssFor(),
-        postcssSimplevars(),
         postcssPixelstorem(),
         extend(),
         mixins(),
+        postcssSimplevars(),
         calc(),
         comments(),
         cssnext({ autoprefixer: { browsers: ['IE >= 10'] } }),
