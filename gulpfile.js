@@ -68,10 +68,20 @@ const partialImport = require('postcss-partial-import');
 const mqPacker = require('css-mqpacker');
 const critical = require('postcss-critical-css');
 const comments = require('postcss-discard-comments');
+const insert = require('gulp-insert');
+const glob = require('glob');
 
 gulp.task('css', () => {
+    const autoIncludes = glob.sync(fspath.resolve(`${providerExt}/Resources/Private/Partials/Global/_Styles/Config/*.css`), { cwd: '/' });
+    const extDirAbs = fspath.resolve(extDist);
     gulp.src(['*/Resources/Private/Partials/*/*/*.css', '!*/Resources/Private/Partials/*/_*/*.css'], { cwd: extDist })
     .pipe(sourcemaps.init()) // Initialize sourcemaps
+    .pipe(insert.transform(function (contents, file) {
+        autoIncludes.forEach((f) => {
+            contents = `@import "${fspath.relative(fspath.dirname(file.path), f)}";\n${contents}`;
+        })
+        return contents;
+    }))
     .pipe(postcss([
         partialImport(),
         postcssFor(),
