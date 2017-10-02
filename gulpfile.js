@@ -63,7 +63,7 @@ const cssnano = require('cssnano');
 const cssnext = require('postcss-cssnext');
 const extend = require('postcss-extend');
 const mixins = require('postcss-mixins');
-const calc = require('postcss-calc');
+// const calc = require('postcss-calc');
 const partialImport = require('postcss-partial-import');
 const mqPacker = require('css-mqpacker');
 const critical = require('postcss-critical-css');
@@ -84,14 +84,14 @@ gulp.task('css', () => {
     }))
     .pipe(postcss([
         partialImport(),
-        calc(),
         nested(),
         postcssFor(),
-        postcssPixelstorem(),
         extend(),
         mixins(),
         postcssSimplevars(),
         comments(),
+        // calc(),
+        postcssPixelstorem(),
         cssnext({ autoprefixer: { browsers: ['IE >= 10'] } }),
         critical({
             outputPath: `${dist}css`,
