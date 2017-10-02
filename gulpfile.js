@@ -69,6 +69,7 @@ const mqPacker = require('css-mqpacker');
 const critical = require('postcss-critical-css');
 const comments = require('postcss-discard-comments');
 const insert = require('gulp-insert');
+const nested = require('postcss-nested');
 const glob = require('glob');
 
 gulp.task('css', () => {
@@ -83,12 +84,13 @@ gulp.task('css', () => {
     }))
     .pipe(postcss([
         partialImport(),
+        calc(),
+        nested(),
         postcssFor(),
         postcssPixelstorem(),
         extend(),
         mixins(),
         postcssSimplevars(),
-        calc(),
         comments(),
         cssnext({ autoprefixer: { browsers: ['IE >= 10'] } }),
         critical({
