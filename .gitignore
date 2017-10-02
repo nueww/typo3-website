@@ -20,8 +20,6 @@
 !/web/favicon.ico
 
 !/web/fileadmin
-!/web/fileadmin/nueww/
-!/web/fileadmin/nueww/**
 !/web/fileadmin/user_upload/
 !/web/fileadmin/user_upload/placeholder/
 !/web/fileadmin/user_upload/placeholder/**
