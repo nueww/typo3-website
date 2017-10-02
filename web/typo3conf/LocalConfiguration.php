@@ -21,6 +21,7 @@ return [
     ],
     'EXT' => [
         'extConf' => [
+            'file_list' => 'a:0:{}',
             'fluidcontent' => 'a:0:{}',
             'fluidpages' => 'a:3:{s:8:"autoload";s:1:"1";s:8:"doktypes";s:0:"";s:33:"pagesLanguageConfigurationOverlay";s:1:"0";}',
             'flux' => 'a:4:{s:9:"debugMode";s:1:"0";s:7:"compact";s:1:"0";s:17:"listNestedContent";s:1:"0";s:12:"handleErrors";s:1:"0";}',

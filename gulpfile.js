@@ -129,7 +129,7 @@ gulp.task('js:concat', (cb) => {
     const critical = filter(['**/*.critical.min.js'], { restore: true });
     const noncritical = filter(['**/*.default.min.js'], { restore: true });
     pump([
-        gulp.src(['*/Resources/Private/Partials/*/*/*.js', '!*/Resources/Private/Partials/*/_*/*.js'], { cwd: extDist }),
+        gulp.src(['*/Resources/Private/Partials/**/*.js', '!*/Resources/Private/Partials/*/_*/**/*.js'], { cwd: extDist }),
         sourcemaps.init(),
         sort(),
         concatFlatten(`${extDist}*/Resources/Private/Partials/*/*`, 'js').on('error', errorHandler('js:concat / concatFlatten')),
