@@ -30,6 +30,7 @@ const sequence = require('gulp-sequence');
 const sourcemaps = require('gulp-sourcemaps');
 const filter = require('gulp-filter');
 const fspath = require('path');
+const concatFlatten = require('gulp-concat-flatten');
 
 /**
  * Stream error handler generator
@@ -71,9 +72,10 @@ const nested = require('postcss-nested');
 const glob = require('glob');
 
 gulp.task('css', () => {
-    const autoIncludes = glob.sync(fspath.resolve(`${providerExt}/Resources/Private/Partials/Global/_Styles/**/*.css`), { cwd: '/' });
-    gulp.src(['*/Resources/Private/Partials/*/*/*.css', '!*/Resources/Private/Partials/*/_*/*.css'], { cwd: extDist })
+    const autoIncludes = glob.sync(fspath.resolve(`${providerExt}/Resources/Private/Partials/Global/_Config/**/*.css`), { cwd: '/' });
+    gulp.src(['*/Resources/Private/Partials/**/*.css', '!*/Resources/Private/Partials/*/_*/**/*.css'], { cwd: extDist })
     .pipe(sourcemaps.init()) // Initialize sourcemaps
+    .pipe(concatFlatten(`${extDist}*/Resources/Private/Partials/*/*`, 'css').on('error', errorHandler('css / concatFlatten')))
     .pipe(insert.transform(function (contents, file) {
         autoIncludes.forEach((f) => {
             contents = `@import "${fspath.relative(fspath.dirname(file.path), f)}";\n${contents}`;
@@ -119,7 +121,6 @@ watch.push([
 /* JAVASCRIPT
  ================================================================================================ */
 const uglify = require('gulp-uglify');
-const concatFlatten = require('gulp-concat-flatten');
 const sort = require('gulp-sort');
 const pump = require('pump');
 const typescript = require('gulp-typescript');
